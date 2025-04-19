@@ -1,0 +1,18 @@
+{
+  "name": "arze-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "Backend profesional para bot de WhatsApp con IA (Grupo Arze)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["whatsapp", "bot", "express", "railway", "twilio", "openrouter"],
+  "author": "Grupo Arze",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2"
+  }
+}
