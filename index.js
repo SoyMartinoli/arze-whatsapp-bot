@@ -29,4 +29,3 @@ app.post('/twilio/webhook', (req, res) => {
   console.log('📩 Mensaje recibido de Twilio:', req.body);
   res.status(200).send('Mensaje recibido ✅');
 });
-
