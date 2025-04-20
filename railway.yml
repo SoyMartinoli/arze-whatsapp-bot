@@ -1,0 +1,5 @@
+# railway.yml
+# Configuración explícita para Railway: Node.js sin build step
+install: npm install
+build: echo "No build step needed"
+start: node index.js
