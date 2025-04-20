@@ -1,7 +1,4 @@
 // index.js
-// Backend principal para el bot de WhatsApp de Grupo Arze
-// Servidor Express listo para Railway y despliegue en la nube
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
@@ -9,15 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 8080; // 🔥 fuerza 8080 como fallback
-// Esto es clave para que Railway reciba peticiones externas
-
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
-
-});
+const PORT = process.env.PORT || 8080; // Railway espera 8080 por defecto
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,3 +21,9 @@ app.post('/twilio/webhook', (req, res) => {
   console.log('📩 Mensaje recibido de Twilio:', req.body);
   res.status(200).send('Mensaje recibido ✅');
 });
+
+// 🔥 Esta es la parte que estaba mal — ya corregida
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+
