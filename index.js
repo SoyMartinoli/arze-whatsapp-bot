@@ -9,11 +9,14 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 8080; // 🔥 fuerza 8080 como fallback
 // Esto es clave para que Railway reciba peticiones externas
+
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+
 });
 
 app.use(bodyParser.json());
